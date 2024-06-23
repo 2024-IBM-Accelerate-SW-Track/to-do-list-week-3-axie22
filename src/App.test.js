@@ -89,8 +89,10 @@ test('test that late tasks have different colors', () => {
   fireEvent.change(inputDate, { target: { value: pastDate } });
   fireEvent.click(addButton);
 
-  const taskCard = screen.getByText(/Late Task/i).closest('.MuiPaper-root'); 
-  expect(taskCard).toHaveStyle('background-color: #ffcccc');
+
+=======
+  const taskCard = screen.getByText(/Late Task/i).closest('.MuiPaper-root');
+  expect(taskCard).toHaveStyle('background-color: #ffcccc'); 
 });
 
 test('test that task can be deleted', () => {
@@ -109,6 +111,4 @@ test('test that task can be deleted', () => {
   const task = screen.queryByText(/Delete Task/i);
   expect(task).not.toBeInTheDocument();
 });
-
-
 
